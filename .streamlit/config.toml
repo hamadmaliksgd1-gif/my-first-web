@@ -4,3 +4,31 @@ backgroundColor = "#1E3A8A"
 secondaryBackgroundColor = "#3B82F6"
 textColor = "#FFFFFF"
 font = "sans serif"
+import streamlit as st
+
+st.title("Contact Page")
+
+# Replace this with your actual Gmail address
+your_gmail = "your.email@gmail.com"
+
+# Method A: A clean text link
+st.write(f"Have questions? [Send me an email](mailto:{your_gmail})")
+
+# Method B: A styled button look using custom HTML
+st.markdown(
+    f"""
+    <a href="mailto:{your_gmail}" target="_blank">
+        <button style="
+            background-color: #EA4335; /* Gmail Red */
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer;
+            font-size: 16px;">
+            📧 Contact via Gmail
+        </button>
+    </a>
+    """,
+    unsafe_html=True
+)
